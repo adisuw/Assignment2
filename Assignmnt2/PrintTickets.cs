@@ -6,6 +6,10 @@ using Utils;
 
 namespace Assignment2
 {
+    /// <summary>
+    /// This class computes and prints the ticket values
+    /// it holds the list of Tickets according to the user input
+    /// </summary>
     class PrintTickets
     {
         private readonly List<Ticket> _tickets;
@@ -14,6 +18,10 @@ namespace Assignment2
         {
             _tickets = new List<Ticket>();
         }
+        /// <summary>
+        /// prints a ticket accordingly
+        /// </summary>
+        /// <param name="single"></param>
         public void IssueTicket(bool single)
         {
             
@@ -32,17 +40,30 @@ namespace Assignment2
             }
 
         }
-
+        /// <summary>
+        /// gets the price for a single Ticket object
+        /// </summary>
+        /// <param name="singleTicket"></param>
+        /// <returns></returns>
         private double ComputePrice(Ticket singleTicket)
         {
             return singleTicket.Price;
         }
+        /// <summary>
+        /// I used the elegant property of C# language here, which is summing all
+        ///the prices that are available in the list.
+        /// </summary>
+        /// <param name="mulTickets"></param>
+        /// <returns></returns>
         private double ComputePrice(IEnumerable<Ticket> mulTickets)
         {
             AddUsersAge();
             return  mulTickets.Sum(ticket => ticket.Price);
         }
 
+        /// <summary>
+        /// The user decided how many number of Tickets are required 
+        /// </summary>
         private void AddUsersAge()
         {
             var n = UserInputReader.ReadInteger("\tEnter the number of people: ");

@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Assignment2
 {
+    /// <summary>
+    /// The Ticket object is supposed to hold the user age, the price and its id
+    /// sets the _price based on the age it gets
+    /// </summary>
     class Ticket
     {
         private static int _ticketId = 0;
@@ -13,6 +17,9 @@ namespace Assignment2
             Age = age;
         }
 
+        /// <summary>
+        /// performs some validations and assigns a static value to the price field.
+        /// </summary>
         public int Age
         {
             set
@@ -37,8 +44,11 @@ namespace Assignment2
                 _ticketId += 1;
             }
         }
-
+    
+        //Only returns the price we do not need to set the price at it is constant
         public double Price => _price;
+
+        //This field is added for the dome purpose.
         public int TicketId => _ticketId;
     }
 }
